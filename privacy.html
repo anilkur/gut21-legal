@@ -1,40 +1,81 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Gut21 – Privacy Policy</title><link rel="stylesheet" href="style.css"></head><body>
-<nav><a href="index.html">Gut21</a><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="support.html">Support</a></nav>
-<h1>Gut21 Privacy Policy</h1><p><em>Effective date: September 28, 2026</em></p>
-<div class="lang">
-<p>This Privacy Policy explains how Gut21 ("the app", "we", "us"), developed by Asim Anil Kurdal, collects, uses and protects your information when you use the Gut21 mobile application on iOS and Android.</p>
-<h2>1. Information we collect</h2>
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Gut21 Privacy Policy — Kurdal Apps</title>
+<meta name="description" content="Privacy policy for the Gut21 app (IBS and low-FODMAP food and symptom assistant).">
+<style>body{max-width:760px;margin:40px auto;padding:0 20px;font:16px/1.65 -apple-system,Segoe UI,Roboto,Arial,sans-serif;background:#0b1020;color:#e8ecf8}a{color:#6c8cff}h1{margin-bottom:4px}h2{margin-top:28px}.m{color:#9aa6c8}table{border-collapse:collapse;width:100%;font-size:15px}td,th{border:1px solid #2a3356;padding:8px;text-align:left;vertical-align:top}th{background:#141b34}</style></head>
+<body>
+<!-- Same text as https://kurdalapps.com/gut21/privacy (canonical). -->
+<p><a href="https://kurdalapps.com/">&larr; Kurdal Apps</a> · <a href="https://kurdalapps.com/gut21/terms">Terms of Use</a></p>
+<h1>Gut21 Privacy Policy</h1>
+<p class="m">Last updated: 3 November 2026 · Applies to the Gut21 app on Android and iOS</p>
+
+<p>Gut21 ("the app") is developed by Anıl Kurdal, Istanbul, Turkey ("we"). This policy explains what data the app handles, why, and how you can control it. Gut21 is <strong>not a medical device</strong> and does not diagnose, treat, cure or prevent any medical condition.</p>
+
+<h2>1. Data you give us</h2>
+<table>
+<tr><th>Data</th><th>Why we process it</th><th>Where it goes</th></tr>
+<tr><td>Account (anonymous ID, or your Google / Apple sign-in name and e-mail)</td><td>To keep your history across devices and to let you delete it</td><td>Firebase Authentication (Google)</td></tr>
+<tr><td>Meal photos, menu photos</td><td>To identify ingredients and estimate their FODMAP level and macros</td><td>Our AWS backend (us-east-1); analysed by an AI model on Amazon Bedrock (see section 3). Photos are processed in memory and are not stored after analysis; only the text result is kept in your history.</td></tr>
+<tr><td>Voice notes</td><td>To turn spoken meal or symptom notes into text</td><td>Transcribed by OpenAI Whisper, then analysed on Amazon Bedrock (see section 3). Audio is not stored after transcription.</td></tr>
+<tr><td>Barcodes</td><td>To look up packaged products</td><td>Open Food Facts (public database) and our backend</td></tr>
+<tr><td>Symptom, stool (Bristol), stress, sleep, water and program entries</td><td>To show your history, trends and possible trigger patterns, and to generate reports you choose to export</td><td>Stored in our AWS backend (DynamoDB, us-east-1), linked to your account ID only</td></tr>
+<tr><td>Language and time zone</td><td>To answer in your language and date your entries correctly</td><td>Our AWS backend</td></tr>
+</table>
+
+<h2>2. Data from your device (optional)</h2>
 <ul>
-<li><strong>Account identifiers:</strong> an anonymous user ID created automatically via Firebase Authentication. If you choose to link Sign in with Apple, Google or email, we also store the email address and name provided by that service.</li>
-<li><strong>Health and wellness data you enter:</strong> symptoms, stool and digestion logs, stress, sleep, water intake, food notes and your 21-day program progress.</li>
-<li><strong>Activity data (optional, with your permission):</strong> step count and activity from Apple Health (HealthKit), Health Connect or the device motion sensor, used only to show your progress.</li>
-<li><strong>Photos and audio you submit:</strong> meal, menu and packaging photos, barcodes and voice notes you choose to analyze. They are sent securely to our servers for AI analysis.</li>
-<li><strong>Location (optional, with your permission):</strong> used only while you use the "nearby restaurants" feature to find suitable places around you.</li>
-<li><strong>Purchases:</strong> subscription and purchase status processed by Apple / Google and managed through RevenueCat. We never receive your card details.</li>
-<li><strong>Usage and device data:</strong> app interactions, crash and performance data, device language and a push-notification token (Firebase Analytics, Firebase Cloud Messaging, Firebase Remote Config).</li>
-<li><strong>Advertising:</strong> free users may see ads served by Google AdMob, which may process device identifiers and approximate location to deliver and measure ads. We do not use HealthKit or any health data for advertising.</li>
+<li><strong>Steps and sleep</strong> (Health Connect on Android, Apple Health on iOS): read only if you grant permission, used to relate activity and rest to your symptoms. Daily totals are stored with your history. We never use health data for advertising and never sell it.</li>
+<li><strong>Location</strong>: used only while you use the "restaurants near me" feature, to query Google Places. It is not stored.</li>
+<li><strong>Camera and microphone</strong>: used only when you take a photo or record a voice note.</li>
+<li><strong>Notifications</strong>: local reminders you enable in the app.</li>
 </ul>
-<h2>2. How we use your information</h2>
-<ul><li>To provide the app's features: AI meal, menu and voice analysis, symptom tracking, insights, trigger finding and doctor-ready reports.</li>
-<li>To personalize your 21-day protocol and reminders (in your device language).</li>
-<li>To process subscriptions and in-app purchases.</li>
-<li>To keep the service secure, fix bugs and improve the app.</li></ul>
-<h2>3. Health data (HealthKit / Health Connect)</h2>
-<p>Data obtained from Apple Health or Health Connect is used only to display your activity progress inside Gut21. It is never sold, never used for advertising or marketing, never shared with data brokers, and never disclosed to third parties except as required to provide the app's functionality or by law.</p>
-<h2>4. AI processing</h2>
-<p>Photos, text and audio you submit for analysis are processed by AI models hosted on Amazon Web Services (AWS Bedrock). Your content is not used to train third-party models. AI results are informational only.</p>
-<h2>5. Service providers</h2>
-<p>We share data only with providers that process it on our behalf: Amazon Web Services (hosting, database, AI), Google Firebase (authentication, analytics, notifications, configuration), Google AdMob (ads for free users), Google Maps Platform (nearby restaurants), RevenueCat (purchase management), Apple and Google (app distribution and payments). We do not sell your personal data.</p>
-<h2>6. Data retention and deletion</h2>
-<p>We keep your data while your account is active. You can delete your account and all associated data at any time in the app: <strong>Profile → Delete account</strong>. You may also email us to request deletion; we complete requests within 30 days. Uninstalling the app removes locally stored data from your device.</p>
+
+<h2>3. Third-party AI services and your permission</h2>
+<p>Gut21's AI features only work by sending some of your data to third-party AI services. <strong>Before the first AI request the app asks for your permission</strong> ("Allow Gut21 to share your data with Anthropic and OpenAI?"), naming what is sent, who receives it and why. If you choose "Don't Allow", nothing is sent and only the AI features are unavailable; the diary, water tracking, calendar, 21-day program and Trigger Finder keep working. You can see and change your choice at any time in <strong>Profile → AI data sharing</strong>.</p>
+<table>
+<tr><th>Feature</th><th>Data sent</th><th>Received by</th></tr>
+<tr><td>Meal and menu analysis</td><td>The meal or menu photo (and a nutrition-label photo if you add one), ingredients you confirm or a dish name you type, your FODMAP phase and triggers, your language</td><td>Anthropic's Claude models on Amazon Bedrock (Amazon Web Services, us-east-1)</td></tr>
+<tr><td>Barcode analysis</td><td>The product's name, ingredients and nutrition data from Open Food Facts, your FODMAP phase and triggers</td><td>Claude on Amazon Bedrock</td></tr>
+<tr><td>Voice analysis</td><td>Your voice recording, then its transcript</td><td>OpenAI (speech-to-text, Whisper); the transcript is analysed by Claude on Amazon Bedrock</td></tr>
+<tr><td>The Brain, the tip after a daily log, the Trigger Finder summary</td><td>Your recent symptom, stool type (Bristol), sleep, stress, water and meal entries and notes</td><td>Claude on Amazon Bedrock</td></tr>
+<tr><td>Restaurants near me</td><td>Your location goes to Google Places only; the names, types and public details of nearby places, with your FODMAP phase and triggers, go to the AI</td><td>Google Places; Claude on Amazon Bedrock</td></tr>
+</table>
+<ul>
+<li><strong>Purpose</strong>: only to produce the result you asked for. This data is not used for advertising or tracking and is never sold.</li>
+<li><strong>Protection</strong>: requests go from our backend over TLS; your name and e-mail are not sent to the AI services. Amazon Bedrock does not share your inputs with Anthropic and does not use them to train models. OpenAI does not use API data to train its models and may keep it for up to 30 days for abuse monitoring. Photos and audio are processed in memory and are not stored after analysis.</li>
+<li>Please do not include information you do not want analysed, such as other people in photos.</li>
+</ul>
+
+<h2>4. Analytics and purchases</h2>
+<ul>
+<li><strong>Analytics</strong>: Firebase / Google Analytics collects app-usage events (screens, feature use, crashes) with a device identifier. No health entries are sent to analytics.</li>
+<li><strong>No ads, no tracking</strong>: since version 2.9.31 Gut21 shows no ads, contains no advertising SDK and does not track you across apps or websites. The advertising ID is not used.</li>
+<li><strong>Purchases</strong>: subscriptions are handled by Google Play or the App Store and tracked by RevenueCat (purchase and entitlement status). We do not see your payment details.</li>
+</ul>
+
+<h2>5. Who we share data with</h2>
+<p>Only the service providers named above (Google / Firebase and Google Places, Amazon Web Services including Amazon Bedrock with Anthropic's Claude models, OpenAI, Open Food Facts, RevenueCat), each acting on our instructions to provide the app. We do not sell personal data and do not share health data with third parties for their own purposes.</p>
+
+<h2>6. Retention and deletion</h2>
+<ul>
+<li>Your history is kept while your account exists.</li>
+<li><strong>Delete in the app</strong>: Profile → Delete account. This removes your account and all history from our backend and Firebase immediately.</li>
+<li>Or e-mail <a href="mailto:gut21@kurdalapps.com">gut21@kurdalapps.com</a> from the address linked to your account; we delete within 30 days.</li>
+<li>Analytics and crash data are retained by Google for up to 14 months.</li>
+</ul>
+
 <h2>7. Your rights</h2>
-<p>Depending on where you live (e.g. GDPR in the EU, KVKK in Türkiye, CCPA in California) you may have the right to access, correct, export or delete your data, and to object to or restrict processing. Contact us to exercise these rights. You can revoke camera, microphone, location and health permissions at any time in your device settings.</p>
-<h2>8. Security</h2><p>Data is transmitted over encrypted connections (HTTPS/TLS) and stored on access-controlled cloud infrastructure.</p>
-<h2>9. Children</h2><p>Gut21 is not directed to children under 13 (or the minimum age in your country) and we do not knowingly collect their data.</p>
-<h2>10. Medical disclaimer</h2><p>Gut21 does not provide medical advice, diagnosis or treatment. Always consult a qualified healthcare professional about your health.</p>
-<h2>11. Changes</h2><p>We may update this policy; the effective date above will change accordingly.</p>
-<h2>12. Contact</h2><p>Asim Anil Kurdal – <a href="mailto:anilkurdal@gmail.com">anilkurdal@gmail.com</a></p>
-</div>
-<div class="lang" lang="tr"><h2>Türkçe Özet – Gizlilik Politikası</h2>
-<p>Gut21; anonim kullanıcı kimliği, bağlarsanız Apple/Google/e-posta adresiniz, girdiğiniz semptom, sindirim, stres, uyku, su ve program verileri, izin verirseniz Apple Sağlık / Health Connect adım verileri, analiz için gönderdiğiniz yemek fotoğrafları ve ses kayıtları, restoran önerisi için konum, satın alma durumu ve uygulama kullanım verilerini işler. Sağlık verileri reklam veya pazarlama amacıyla kullanılmaz, satılmaz. Veriler AWS, Google Firebase, Google AdMob, Google Haritalar ve RevenueCat hizmet sağlayıcılarıyla yalnızca hizmetin sunulması için paylaşılır. Hesabınızı ve tüm verilerinizi uygulamada <strong>Profil → Hesabı sil</strong> ile silebilir veya <a href="mailto:anilkurdal@gmail.com">anilkurdal@gmail.com</a> adresine yazabilirsiniz. KVKK kapsamındaki haklarınız için bize ulaşın. Gut21 tıbbi tavsiye vermez.</p></div>
-<footer>© 2026 Gut21</footer></body></html>
+<p>Depending on where you live (GDPR, UK GDPR, CCPA, KVKK and others) you may access, correct, export or delete your data and object to processing. Use the in-app tools or e-mail us. You may also complain to your local data-protection authority.</p>
+
+<h2>8. Children</h2>
+<p>Gut21 is intended for adults aged 18 and over. We do not knowingly collect data from children.</p>
+
+<h2>9. Security</h2>
+<p>Data is encrypted in transit (TLS) and at rest in AWS. API requests are authenticated with your Firebase identity token. Access is limited to the developer.</p>
+
+<h2>10. Changes</h2>
+<p>We will post any changes on this page and update the date above. Material changes are announced in the app.</p>
+
+<h2>11. Contact</h2>
+<p>Anıl Kurdal, Istanbul, Turkey — <a href="mailto:gut21@kurdalapps.com">gut21@kurdalapps.com</a></p>
+</body></html>
